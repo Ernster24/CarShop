@@ -1,0 +1,43 @@
+﻿<ul class="list-unstyled">
+    @foreach (var vehicle in car_list)
+    {
+        <li class="media my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="/vehicle/@vehicle.Id">
+                    <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="/vehicle/@vehicle.Id">
+                    <h4 class="mb-o">@vehicle.Title</h4>
+                </a>
+                <p>@vehicle.Description</p>
+                <h5 class="price">
+                    $@vehicle.Price
+                </h5>
+            </div>
+        </li>
+    }
+</ul>
+
+@code {
+    List<Product> car_list = new List<Product>{
+        new Product {
+            Id = 1,
+            MakeId = 1,
+            Title = "Volkswagen Golf",
+            Description = "Volkswagen Golf GTI 3dr 2.0L 2009",
+            Image = "https://parkers-images.bauersecure.com/Scale/wp-images/2338/cut-out/600x400/vw_golf_gti09.jpg",
+            Price = 8000m
+        },
+        new Product {
+            Id = 2,
+            MakeId = 2,
+            Title = "Mazda MX-5",
+            Description = "Mazda MX-5 RF 2dr 2.0L 2020",
+            Image = "https://parkers-images.bauersecure.com/Scale/wp-images/21887/cut-out/600x400/mazda-mx5-rf-front.jpg",
+            Price = 12000m
+        }
+    };
+
+}
