@@ -8,6 +8,7 @@
 }
 
 .navbar-brand {
+    padding-left: 1rem;
     font-size: 1.1rem;
 }
 
@@ -20,17 +21,11 @@
 
 .nav-item {
     font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
-
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
-
     .nav-item ::deep a {
         color: #d7d7d7;
         border-radius: 4px;

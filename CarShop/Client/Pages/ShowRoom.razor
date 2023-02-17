@@ -1,3 +1,34 @@
 ﻿@page "/showroom"
+@inject NavigationManager NavigationManager
 
-<ProductList />
+<h1>Show Room</h1>
+
+@foreach (var vehicle in vehicles)
+{
+    <li class="media my-3">
+        <div class="media-img-wrapper mr-2">
+            <a href="/vehicle/@vehicle.Id">
+                <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="/vehicle/@vehicle.Id">
+                <h4 class="mb-o">@vehicle.Title</h4>
+            </a>
+            <p>@vehicle.Description</p>
+            <h5 class="price">
+                $@vehicle.Price
+            </h5>
+        </div>
+    </li>
+}
+
+@code
+{
+    List<Product> vehicles;
+
+    protected override void OnInitialized()
+    {
+        this.vehicles = CarList.GetProducts();
+    }
+}

@@ -1,2 +1,8 @@
-﻿@page "/vehicle"
+﻿@page "/showroom/{Id:int}"
+@inject NavigationManager NavigationManager
 
+<div class="car-page">
+    <div>
+        @vehicles.Title
+    </div>
+</div>
