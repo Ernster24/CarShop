@@ -1,8 +1,30 @@
 ﻿@page "/showroom/{Id:int}"
 @inject NavigationManager NavigationManager
 
+
+<h1>@vehicle.Title</h1>
+
 <div class="car-page">
     <div>
-        @vehicles.Title
+        <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
     </div>
 </div>
+
+@code
+{
+    [Parameter]
+    public int Id { get; set; }
+
+    CarShop.Shared.Product vehicle = null;
+
+    protected override void OnParametersSet()
+    {
+        this.vehicle = CarShop.Shared.CarList.GetProduct(this.Id);
+    }
+
+    private void Navigate()
+    {
+        NavigationManager.NavigateTo("vehicles");
+    }
+}
+
