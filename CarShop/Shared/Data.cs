@@ -6,6 +6,13 @@ namespace CarShop.Shared
     {
         public int Id { get; set; }
         public string? Title { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public string Year { get; set; }
+        public string Mileage { get; set; }
+        public string Transmission { get; set; }
+        public string Seats { get; set; }
+        public string FuelType { get; set; }
         public string? Description { get; set; }
         public string Url
         {
@@ -33,6 +40,13 @@ namespace CarShop.Shared
             new Product {
                 Id = 1,
                 MakeId = 1,
+                Make = "Volkswagon",
+                Model = "Golf",
+                Year = "2009",
+                Mileage = "85241",
+                Transmission = "Manual",
+                Seats = "5",
+                FuelType = "Petrol",
                 Title = "Volkswagen Golf",
                 Description = "Volkswagen Golf GTI 3dr 2.0L 2009",
                 Image = "https://parkers-images.bauersecure.com/Scale/wp-images/2338/cut-out/600x400/vw_golf_gti09.jpg",
@@ -41,6 +55,13 @@ namespace CarShop.Shared
             new Product {
                 Id = 2,
                 MakeId = 2,
+                Make = "Mazda",
+                Model = "MX-5",
+                Year = "2020",
+                Mileage = "55342",
+                Transmission = "Manual",
+                Seats = "2",
+                FuelType = "Petrol",
                 Title = "Mazda MX-5",
                 Description = "Mazda MX-5 RF 3dr 2.0L 2020",
                 Image = "https://parkers-images.bauersecure.com/Scale/wp-images/21887/cut-out/600x400/mazda-mx5-rf-front.jpg",
@@ -49,8 +70,15 @@ namespace CarShop.Shared
             new Product {
                 Id = 3,
                 MakeId = 3,
-                Title = "Mini Cooper S",
-                Description = "Mini Cooper S 1.6L 2008",
+                Make = "MINI",
+                Model = "Cooper S",
+                Year = "2008",
+                Mileage = "69432",
+                Transmission = "Manual",
+                Seats = "4",
+                FuelType = "Petrol",
+                Title = "MINI Cooper S",
+                Description = "MINI Cooper S 1.6L 2008",
                 Image = "https://parkers-images.bauersecure.com/Scale/wp-images/21204/cut-out/900x600/mini_cooper_s.jpg",
                 Price = 6000m
             }
