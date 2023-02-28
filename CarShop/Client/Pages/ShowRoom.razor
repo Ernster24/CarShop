@@ -3,26 +3,27 @@
 
 <h1>Show Room</h1>
 
-@foreach (var vehicle in vehicles)
-{
-    <li class="media my-3">
-        <div class="media-img-wrapper mr-2">
-            <a href="/showroom/@vehicle.Id">
-                <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
-            </a>
+<div class="grid-container" id="grid">
+    @foreach (var vehicle in vehicles)
+    {
+        <div class="container">
+            <div class="media-img-wrapper">
+                <a href="/showroom/@vehicle.Id">
+                    <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="/showroom/@vehicle.Id">
+                    <h4 class="mb-o">@vehicle.Title</h4>
+                </a>
+                <p>@vehicle.Description</p>
+                <h5 class="price">
+                    $@vehicle.Price
+                </h5>
+            </div>
         </div>
-        <div class="media-body">
-            <!--<NavLink href="@vehicle.Url" target="_blank">@vehicle.Title</NavLink>-->
-            <a href="/showroom/@vehicle.Id">
-                <h4 class="mb-o">@vehicle.Title</h4>
-            </a>
-            <p>@vehicle.Description</p>
-            <h5 class="price">
-                $@vehicle.Price
-            </h5>
-        </div>
-    </li>
-}
+    }
+</div>
 
 @code
 {

@@ -6,13 +6,13 @@ namespace CarShop.Shared
     {
         public int Id { get; set; }
         public string? Title { get; set; }
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public string Year { get; set; }
-        public string Mileage { get; set; }
-        public string Transmission { get; set; }
-        public string Seats { get; set; }
-        public string FuelType { get; set; }
+        public string? Make { get; set; }
+        public string? Model { get; set; }
+        public string? Year { get; set; }
+        public string? Mileage { get; set; }
+        public string? Transmission { get; set; }
+        public string? Seats { get; set; }
+        public string? FuelType { get; set; }
         public string? Description { get; set; }
         public string Url
         {
@@ -25,7 +25,6 @@ namespace CarShop.Shared
         public decimal Price { get; set; }
         public bool IsPublic { get; set; }
         public bool IsDeleted { get; set; }
-        public string? Make { get; set; }
         public int MakeId { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
@@ -49,7 +48,7 @@ namespace CarShop.Shared
                 FuelType = "Petrol",
                 Title = "Volkswagen Golf",
                 Description = "Volkswagen Golf GTI 3dr 2.0L 2009",
-                Image = "https://parkers-images.bauersecure.com/Scale/wp-images/2338/cut-out/600x400/vw_golf_gti09.jpg",
+                Image = "/Images/vw_golf_gti09.jpg",
                 Price = 8000m
             },
             new Product {
@@ -64,7 +63,7 @@ namespace CarShop.Shared
                 FuelType = "Petrol",
                 Title = "Mazda MX-5",
                 Description = "Mazda MX-5 RF 3dr 2.0L 2020",
-                Image = "https://parkers-images.bauersecure.com/Scale/wp-images/21887/cut-out/600x400/mazda-mx5-rf-front.jpg",
+                Image = "/Images/mazda-mx5-rf-front.jpg",
                 Price = 12000m
             },
             new Product {
@@ -79,7 +78,7 @@ namespace CarShop.Shared
                 FuelType = "Petrol",
                 Title = "MINI Cooper S",
                 Description = "MINI Cooper S 1.6L 2008",
-                Image = "https://parkers-images.bauersecure.com/Scale/wp-images/21204/cut-out/900x600/mini_cooper_s.jpg",
+                Image = "/Images/mini_cooper_s.jpg",
                 Price = 6000m
             }
         };
