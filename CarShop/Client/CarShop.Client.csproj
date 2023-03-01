@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Pages\Finance.razor.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Images\mazda-mx5-rf-front.jpg" />
     <None Include="wwwroot\Images\mini_cooper_s.jpg" />
     <None Include="wwwroot\Images\vw_golf_gti09.jpg" />
