@@ -1,9 +1,10 @@
 ﻿@page "/showroom"
 @inject NavigationManager NavigationManager
 
-<h1>Show Room</h1>
+
 
 <div class="list-container">
+    <h1>Show Room</h1>
     @foreach (var vehicle in vehicles)
     {
         <div class="container">
@@ -14,9 +15,6 @@
             </div>
             <div class="media-body">
                 <h2 class="car-name">@vehicle.Title</h2>
-                <h5 class="price">
-                    $@vehicle.Price
-                </h5>
                 <div class="car-info">
                     <p>@vehicle.Make</p>
                     <p>@vehicle.Model</p>
@@ -29,6 +27,9 @@
                     <a href="/showroom/@vehicle.Id">
                         <h4 class="more-details">View More Details</h4>
                     </a>
+                    <h5 class="price">
+                        $@vehicle.Price
+                    </h5>
                 </div>
             </div>
         </div>
