@@ -3,7 +3,7 @@
 
 <h1>Show Room</h1>
 
-<div class="grid-container" id="grid">
+<div class="list-container">
     @foreach (var vehicle in vehicles)
     {
         <div class="container">
@@ -13,13 +13,23 @@
                 </a>
             </div>
             <div class="media-body">
-                <a href="/showroom/@vehicle.Id">
-                    <h4 class="mb-o">@vehicle.Title</h4>
-                </a>
-                <p>@vehicle.Description</p>
+                <h2 class="car-name">@vehicle.Title</h2>
                 <h5 class="price">
                     $@vehicle.Price
                 </h5>
+                <div class="car-info">
+                    <p>@vehicle.Make</p>
+                    <p>@vehicle.Model</p>
+                    <p>@vehicle.Year</p>
+                    <p>@vehicle.Mileage</p>
+                    <p>@vehicle.Transmission</p>
+                    <p>@vehicle.Seats</p>
+                    <p>@vehicle.FuelType</p>
+                    <p>@vehicle.Engine</p>
+                    <a href="/showroom/@vehicle.Id">
+                        <h4 class="more-details">View More Details</h4>
+                    </a>
+                </div>
             </div>
         </div>
     }

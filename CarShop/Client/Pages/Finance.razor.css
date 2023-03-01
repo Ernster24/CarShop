@@ -1,4 +1,7 @@
-﻿button[type=submit] {
+﻿.finance-apply {
+}
+
+button[type=submit] {
     width: 300px;
     padding: 6px 6px;
     margin: 8px;

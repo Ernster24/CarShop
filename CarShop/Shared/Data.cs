@@ -13,6 +13,7 @@ namespace CarShop.Shared
         public string? Transmission { get; set; }
         public string? Seats { get; set; }
         public string? FuelType { get; set; }
+        public string? Engine { get; set; }
         public string? Description { get; set; }
         public string Url
         {
@@ -25,7 +26,6 @@ namespace CarShop.Shared
         public decimal Price { get; set; }
         public bool IsPublic { get; set; }
         public bool IsDeleted { get; set; }
-        public int MakeId { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
 
@@ -38,7 +38,6 @@ namespace CarShop.Shared
         private static List<Product> vehicles = new List<Product>(){
             new Product {
                 Id = 1,
-                MakeId = 1,
                 Make = "Volkswagon",
                 Model = "Golf",
                 Year = "2009",
@@ -46,6 +45,7 @@ namespace CarShop.Shared
                 Transmission = "Manual",
                 Seats = "5",
                 FuelType = "Petrol",
+                Engine = "2.0L",
                 Title = "Volkswagen Golf",
                 Description = "Volkswagen Golf GTI 3dr 2.0L 2009",
                 Image = "/Images/vw_golf_gti09.jpg",
@@ -53,7 +53,6 @@ namespace CarShop.Shared
             },
             new Product {
                 Id = 2,
-                MakeId = 2,
                 Make = "Mazda",
                 Model = "MX-5",
                 Year = "2020",
@@ -61,6 +60,7 @@ namespace CarShop.Shared
                 Transmission = "Manual",
                 Seats = "2",
                 FuelType = "Petrol",
+                Engine = "2.0L",
                 Title = "Mazda MX-5",
                 Description = "Mazda MX-5 RF 3dr 2.0L 2020",
                 Image = "/Images/mazda-mx5-rf-front.jpg",
@@ -68,7 +68,6 @@ namespace CarShop.Shared
             },
             new Product {
                 Id = 3,
-                MakeId = 3,
                 Make = "MINI",
                 Model = "Cooper S",
                 Year = "2008",
@@ -76,10 +75,26 @@ namespace CarShop.Shared
                 Transmission = "Manual",
                 Seats = "4",
                 FuelType = "Petrol",
+                Engine = "1.6L",
                 Title = "MINI Cooper S",
                 Description = "MINI Cooper S 1.6L 2008",
                 Image = "/Images/mini_cooper_s.jpg",
                 Price = 6000m
+            },
+            new Product {
+                Id = 4,
+                Make = "Vauxhall",
+                Model = "Corsa",
+                Year = "2015",
+                Mileage = "62975",
+                Transmission = "Manual",
+                Seats = "5",
+                FuelType = "Petrol",
+                Engine = "1.4L",
+                Title = "Vauxhall Corsa",
+                Description = "Vauxhall Corsa 1.4L 2015",
+                Image = "/Images/vauxhall_corsa.jpg",
+                Price = 5500m
             }
         };
 
