@@ -1,0 +1,24 @@
+﻿@page "/buy/{Id:int}"
+@inject NavigationManager NavigationManager
+
+<h1>@vehicle.Title</h1>
+
+
+
+@code
+{
+    [Parameter]
+    public int Id { get; set; }
+
+    CarShop.Shared.Product vehicle = null;
+
+    protected override void OnParametersSet()
+    {
+        this.vehicle = CarShop.Shared.CarList.GetProduct(this.Id);
+    }
+
+    private void Navigate()
+    {
+        NavigationManager.NavigateTo("vehicles");
+    }
+}

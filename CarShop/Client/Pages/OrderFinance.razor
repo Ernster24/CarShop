@@ -1,0 +1,56 @@
+﻿@page "/finance/{Id:int}"
+@using Microsoft.Extensions.Logging
+@inject ILogger<Finance> Logger
+@inject NavigationManager NavigationManager
+
+
+<div class="finance-apply">
+    <article>
+        <h1>Apply for Finance</h1>
+        <EditForm Model="@financeForm" OnSubmit="@HandleSubmit">
+            <InputText id="first-name" @bind-Value="financeForm.FirstName" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your First Name..." />
+            <br />
+            <InputText id="last-name" @bind-Value="financeForm.LastName" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Last Name..." />
+            <br />
+            <InputText id="email" @bind-Value="financeForm.Email" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Email Address..." />
+            <br />
+            <InputText id="house-no" @bind-Value="financeForm.HouseNo" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your House Number..." />
+            <br />
+            <InputText id="street" @bind-Value="financeForm.Street" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Street Name..." />
+            <br />
+            <InputText id="city" @bind-Value="financeForm.City" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your City..." />
+            <br />
+            <InputText id="region" @bind-Value="financeForm.Region" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Region..." />
+            <br />
+            <InputText id="country" @bind-Value="financeForm.Country" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Country..." />
+            <br />
+            <InputText id="phone" @bind-Value="financeForm.Phone" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Phone Number..." />
+            <br />
+            <button type="submit">Apply for Finance</button>
+        </EditForm>
+    </article>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    CarShop.Shared.Product vehicle = null;
+
+    protected override void OnParametersSet()
+    {
+        this.vehicle = CarShop.Shared.CarList.GetProduct(this.Id);
+    }
+
+    private void Navigate()
+    {
+        NavigationManager.NavigateTo("vehicles");
+    }
+
+    private CarShop.Shared.Forms.FinanceForm financeForm = new();
+
+    private void HandleSubmit()
+    {
+        Logger.LogInformation("HandleSubmit Called");
+    }
+}

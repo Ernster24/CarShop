@@ -1,7 +1,5 @@
 ﻿.list-container {
-    display: contents;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 .container {
@@ -24,7 +22,6 @@
 }
 
 .car-info {
-    position: center;
     display: grid;
     grid-template-columns: auto auto auto auto;
     color: black;
