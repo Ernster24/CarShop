@@ -1,0 +1,10 @@
+﻿@page "/admin"
+@attribute [Authorize]
+
+<h1>Admin Tools</h1>
+
+<AuthorizeView>
+    <Authorized>
+        <span>You are authorised as @context.User.Identity.Name</span>
+    </Authorized>
+</AuthorizeView>
