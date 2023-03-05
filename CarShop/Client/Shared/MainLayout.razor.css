@@ -1,5 +1,5 @@
 .content {
-    
+    position: relative;
     width: 100%;
     padding-top: 100px;
     padding-left: 120px;
@@ -11,7 +11,6 @@
 body {
     position: center;
     flex-direction: column;
-    margin: 0 0 100px;
+    margin: auto;
     background-color: #0f171e;
-    padding: 0px;
 }

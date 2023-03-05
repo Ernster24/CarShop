@@ -5,17 +5,37 @@
 <h1>@vehicle.Title</h1>
 
 <div class="car-page">
-    <div>
-        <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
+    <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
+    <br />
+    <div class="buttons">
+            <a class="btn" href="/buy/@vehicle.Id">Purchase</a>
+            <a class="btn" href="/finance/@vehicle.Id">Finance</a>
+            <a class="btn" href="">Book a Test Drive</a>
+    </div>
+    <div class="car-details">
         <p>Make: @vehicle.Make</p>
         <p>Model: @vehicle.Model</p>
         <p>Year: @vehicle.Year</p>
         <p>Mileage: @vehicle.Mileage</p>
-        <p>Transmission: @vehicle.Transmission</p>
+        <p>Transmission: @vehicle.GearBox</p>
         <p>Seats: @vehicle.Seats</p>
         <p>Fuel Type: @vehicle.FuelType</p>
-        <a class="buy-button" href="/buy/@vehicle.Id">Purchase</a>
-        <a class="finance-button" href="/finance/@vehicle.Id">Finance</a>
+        <p>Engine: @vehicle.Engine</p>
+        <p>Cylinders: @vehicle.Cylinders</p>
+        <p>Power: @vehicle.Power</p>
+        <p>Fuel Capacity: @vehicle.FuelCapacity</p>
+        <p>Top Speed: @vehicle.TopSpeed</p>
+        <p>Acceleration: @vehicle.Acceleration</p>
+        <p>Drive Type: @vehicle.DriveType</p>
+        <p>Length: @vehicle.Length</p>
+        <p>Width: @vehicle.Width</p>
+        <p>Height: @vehicle.Height</p>
+        <p>Unladed Weight: @vehicle.WeightUnladed</p>
+        <p>Gross Weight: @vehicle.WeightGross</p>
+        <p>Fuel Economy City: @vehicle.FuelEconCity</p>
+        <p>Fuel Economy Highway: @vehicle.FuelEconHighway</p>
+        <p>Fuel Economy Combined: @vehicle.FuelEconComb</p>
+        <p>C02 Emissions: @vehicle.CarbonEmissions</p>
     </div>
 </div>
 
