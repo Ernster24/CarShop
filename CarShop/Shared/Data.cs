@@ -38,7 +38,7 @@ namespace CarShop.Shared
         private static List<Product> vehicles = new List<Product>(){
             new Product {
                 Id = 1,
-                Make = "Volkswagon",
+                Make = "Volkswagen",
                 Model = "Golf",
                 Year = "2009",
                 Mileage = "85241",

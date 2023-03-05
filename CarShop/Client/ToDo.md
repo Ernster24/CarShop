@@ -12,10 +12,10 @@
 
 	Car purchase:
 		- Customer can select a car to purchase [x]
-		- Customer can enter card details to purchase car []
+		- Customer can enter card details to purchase car [x]
 		- Card details are validated []
 		- Customer can book a test drive []
-		- Purchase page styled []
+		- Purchase page styled [x]
 
 	Car finance:
 		- Customer can fill out a finance form []
@@ -40,4 +40,3 @@
 Other stuff:
 	- More car specifications []
 	- Contact us details (address, phone number) []
-	- 
