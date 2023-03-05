@@ -5,37 +5,79 @@
 <h1>@vehicle.Title</h1>
 
 <div class="car-page">
-    <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
-    <br />
-    <div class="buttons">
-            <a class="btn" href="/buy/@vehicle.Id">Purchase</a>
-            <a class="btn" href="/finance/@vehicle.Id">Finance</a>
-            <a class="btn" href="">Book a Test Drive</a>
-    </div>
-    <div class="car-details">
-        <p>Make: @vehicle.Make</p>
-        <p>Model: @vehicle.Model</p>
-        <p>Year: @vehicle.Year</p>
-        <p>Mileage: @vehicle.Mileage</p>
-        <p>Transmission: @vehicle.GearBox</p>
-        <p>Seats: @vehicle.Seats</p>
-        <p>Fuel Type: @vehicle.FuelType</p>
-        <p>Engine: @vehicle.Engine</p>
-        <p>Cylinders: @vehicle.Cylinders</p>
-        <p>Power: @vehicle.Power</p>
-        <p>Fuel Capacity: @vehicle.FuelCapacity</p>
-        <p>Top Speed: @vehicle.TopSpeed</p>
-        <p>Acceleration: @vehicle.Acceleration</p>
-        <p>Drive Type: @vehicle.DriveType</p>
-        <p>Length: @vehicle.Length</p>
-        <p>Width: @vehicle.Width</p>
-        <p>Height: @vehicle.Height</p>
-        <p>Unladed Weight: @vehicle.WeightUnladed</p>
-        <p>Gross Weight: @vehicle.WeightGross</p>
-        <p>Fuel Economy City: @vehicle.FuelEconCity</p>
-        <p>Fuel Economy Highway: @vehicle.FuelEconHighway</p>
-        <p>Fuel Economy Combined: @vehicle.FuelEconComb</p>
-        <p>C02 Emissions: @vehicle.CarbonEmissions</p>
+    <div class="car-content">
+        <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
+        <br />
+        <div class="buttons">
+                <p>Click here to purchase this vehicle:</p>
+                <a class="btn" href="/buy/@vehicle.Id">Purchase</a>
+                <p>Or...</p>
+                <br />
+                <p>Click here to apply to finance this vehicle:</p>
+                <a class="btn" href="/finance/@vehicle.Id">Finance</a>
+                <p>Or...</p>
+                <br />
+                <p>Click here to book a test drive:</p>
+                <a class="btn" href="">Book a Test Drive</a>
+        </div>
+        <div class="car-details">
+            <h2><b>Key Information</b></h2>
+            <ul>
+                <li><b>Make:</b>                   @vehicle.Make</li>
+                <li><b>Model:</b>                  @vehicle.Model</li>
+                <li><b>Year:</b>                   @vehicle.Year</li>
+                <li><b>Mileage:</b>                @vehicle.Mileage</li>
+                <li><b>Seats:</b>                  @vehicle.Seats</li>
+            </ul>
+        </div>
+        <hr style="height:5px; margin-left:500px; margin-right:50px;"/>
+        <div class="car-details">
+            <h2><b>Engine Specifications</b></h2>
+            <ul>
+                <li><b>Engine:</b>                 @vehicle.Engine</li>
+                <li><b>Cylinders:</b>              @vehicle.Cylinders</li>
+                <li><b>Power:</b>                  @vehicle.Power</li>
+                <li><b>Fuel Type:</b>              @vehicle.FuelType</li>
+                <li><b>Fuel Capacity:</b>          @vehicle.FuelCapacity</li>
+            </ul>
+        </div>
+        <hr style="height:5px; margin-left:500px; margin-right:50px;"/>
+        <div class="car-details">
+            <h2><b>Performance</b></h2>
+            <ul>
+                <li><b>Top Speed:</b>              @vehicle.TopSpeed</li>
+                <li><b>Acceleration:</b>           @vehicle.Acceleration</li>
+            </ul>
+        </div>
+        <hr style="height:5px; margin-left:500px; margin-right:50px;"/>
+        <div class="car-details">
+            <h2><b>Transmission Specifications</b></h2>
+            <ul>
+                <li><b>GearBox:</b>                @vehicle.GearBox</li>
+                <li><b>Drive Type:</b>             @vehicle.DriveType</li>
+            </ul>
+        </div>
+        <hr style="height:5px; margin-left:500px; margin-right:50px;"/>
+        <div class="car-details">
+            <h2><b>Vehicle Dimensions</b></h2>
+            <ul>
+                <li><b>Length:</b>                 @vehicle.Length</li>
+                <li><b>Width:</b>                  @vehicle.Width</li>
+                <li><b>Height:</b>                 @vehicle.Height</li>
+                <li><b>Unladed Weight:</b>         @vehicle.WeightUnladed</li>
+                <li><b>Gross Weight:</b>           @vehicle.WeightGross</li>
+            </ul>
+        </div>
+        <hr style="height:5px; margin-left:500px; margin-right:50px;"/>
+        <div class="car-details">
+            <h2><b>Fuel Economy</b></h2>
+            <ul>
+                <li><b>Fuel Economy City:</b>      @vehicle.FuelEconCity</li>
+                <li><b>Fuel Economy Highway:</b>   @vehicle.FuelEconHighway</li>
+                <li><b>Fuel Economy Combined:</b>  @vehicle.FuelEconComb</li>
+                <li><b>C02 Emissions:</b>          @vehicle.CarbonEmissions</li>
+            </ul>
+        </div>
     </div>
 </div>
 
