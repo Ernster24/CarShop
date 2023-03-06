@@ -12,23 +12,32 @@
                     <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
                 </a>
             </div>
+            
             <div class="media-body">
                 <h2 class="car-name">@vehicle.Title</h2>
+                <hr />
                 <div class="car-info">
-                    <p>@vehicle.Make</p>
-                    <p>@vehicle.Model</p>
-                    <p>@vehicle.Year</p>
-                    <p>@vehicle.Mileage</p>
-                    <p>@vehicle.Transmission</p>
-                    <p>@vehicle.Seats</p>
-                    <p>@vehicle.FuelType</p>
-                    <p>@vehicle.Engine</p>
-                    <a href="/showroom/@vehicle.Id">
-                        <h4 class="more-details">View More Details</h4>
-                    </a>
-                    <h5 class="price">
-                        $@vehicle.Price
+                    <p><b>Makes: </b>           @vehicle.Make</p>
+                    <p><b>Model: </b>           @vehicle.Model</p>
+                    <p><b>Year: </b>            @vehicle.Year</p>
+                    <p><b>Mileage: </b>         @vehicle.Mileage</p>
+                    <p><b>Transmission: </b>    @vehicle.Transmission</p>
+                    <p><b>Seats: </b>           @vehicle.Seats</p>
+                    <p><b>Fuel Type: </b>       @vehicle.FuelType</p>
+                    <p><b>Engine Size: </b>     @vehicle.Engine</p>
+                </div>
+                <hr />
+                <div class="price">
+                    <h5>
+                        <b>
+                            £@vehicle.Price
+                        </b>
                     </h5>
+                </div>
+                <div class="more-details">
+                    <a href="/showroom/@vehicle.Id">
+                        <h4><b>VIEW MORE DETAILS</b></h4>
+                    </a>
                 </div>
             </div>
         </div>

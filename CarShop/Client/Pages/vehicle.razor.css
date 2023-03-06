@@ -47,6 +47,12 @@ h2 {
     text-align: center;
 }
 
+hr {
+    height: 5px;
+    margin-left: 500px;
+    margin-right: 50px;
+}
+
 ul {
     list-style-type: none;
 }

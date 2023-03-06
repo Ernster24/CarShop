@@ -1,5 +1,6 @@
 ﻿.list-container {
-    
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 .container {
@@ -13,12 +14,32 @@
     margin: 16px;
 }
 
-.price {
+.car-name {
     color: black;
 }
 
-.car-name {
+hr {
     color: black;
+}
+
+h4 {
+    color: #0f79af;
+}
+
+h5 {
+    color: black;
+    font-size: 30px;
+    position: absolute;
+}
+
+.more-details {
+    text-align: right;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+a:link{
+    text-decoration: none;
 }
 
 .car-info {
@@ -28,13 +49,12 @@
 }
 
 .media-body {
-    
     background-color: gainsboro;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     width: 100%;
     font-size: 16px;
-    padding: 16px 16px;
+    padding: 16px;
 }
 
 .media-img {
