@@ -1,12 +1,15 @@
 .content {
     position: relative;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 30px;
     padding-left: 120px;
     padding-right: 120px;
 }
 
-
+.title {
+    text-align: center;
+    padding-top: 120px;
+}
 
 body {
     position: center;
@@ -14,3 +17,4 @@ body {
     margin: auto;
     background-color: #0f171e;
 }
+
