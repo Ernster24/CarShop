@@ -1,8 +1,35 @@
 ﻿@page "/contact"
-
-<h1>Contact Us</h1>
+@inject IJSRuntime JSRuntime
 
 <div class="main">
-    <h2>Where are we Located?</h2>
-    <h3>How can you Contact us?</h3>
+    <div class="location">
+        <h2>Where are we Located?</h2>
+        <hr style="height: 3px; width: 100%;" />
+        <div id="google-map" style="width:400px; height:400px;"></div>
+    </div>
+
+    <div class="contact">
+        
+        <div class="contact-details">
+            <h2>How can you Contact us?</h2>
+            <hr style="height: 3px; margin-left: 600px;" />
+            <p><b>Phone Number: </b>01933 123456</p>
+            <p><b>Address: </b></p>
+        </div>
+        
+    </div>
 </div>
+
+
+
+
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("myMap", null);
+        }
+    }
+}

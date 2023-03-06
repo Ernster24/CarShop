@@ -1,3 +1,13 @@
 ﻿.main {
     text-align: center;
 }
+
+h1 {
+    font-size: 25px;
+    color: #0f79af;
+}
+
+hr {
+    margin-left: 600px;
+    margin-right: 600px;
+}

@@ -8,7 +8,7 @@
 	Showroom:
 		- Each car is listed [x]
 		- Details for car is shown [x]
-		- Car list styled []
+		- Car list styled [x]
 
 	Car purchase:
 		- Customer can select a car to purchase [x]
