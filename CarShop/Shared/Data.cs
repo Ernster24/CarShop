@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace CarShop.Shared
 {
-    public class Product
+    public class Product    // Class contains attributes for the vehicles
     {
         public int Id { get; set; }
         public string? Title { get; set; }
@@ -45,14 +46,112 @@ namespace CarShop.Shared
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
 
+    }
 
+    public class ProductSale // Class contains attributes for each vehicle sale
+    {
+        public int Id { get; set; }
+        public string? Make { get; set; }
+        public string? Model { get; set; }
+        public string? Reg { get; set; }
+        public DateOnly Date { get; set; }
+        public decimal Price { get; set; }
+        public string? BuyerName { get; set; }
+        public string? BuyerPhone { get; set; }
+        public string? BuyerEmail { get; set;}
 
     }
 
-    public static class CarList
+    public static class CarSales
     {
-        private static List<Product> vehicles = new List<Product>(){
-            new Product {
+        private static List<ProductSale> sales = new List<ProductSale>()
+        {
+            new ProductSale
+            {
+                Id = 1,
+                Make = "Alfa Romeo",
+                Model = "159",
+                Reg = "KV57 BLT",
+                Date = new DateOnly(2022, 09, 05),
+                Price = 4000m,
+                BuyerName = "John Smith",
+                BuyerPhone = "07123456789",
+                BuyerEmail = "johnsmith@email.com"
+            },
+            new ProductSale
+            {
+                Id = 2,
+                Make = "Ford",
+                Model = "Fiesta",
+                Reg = "XF21 MNG",
+                Date = new DateOnly(2023, 01, 02),
+                Price = 14000m,
+                BuyerName = "Bob Adams",
+                BuyerPhone = "07639584390",
+                BuyerEmail = "bobadams@email.com"
+            },
+            new ProductSale
+            {
+                Id = 3,
+                Make = "Volkswagen",
+                Model = "Fox",
+                Reg = "KV56 OKF",
+                Date = new DateOnly(2019, 05, 21),
+                Price = 1600m,
+                BuyerName = "Barry B",
+                BuyerPhone = "07927475834",
+                BuyerEmail = "barryb@email.com"
+            },
+            new ProductSale
+            {
+                Id = 4,
+                Make = "Vauxhall",
+                Model = "Corsa",
+                Reg = "KE15 LVT",
+                Date = new DateOnly(2019, 08, 20),
+                Price = 7000m,
+                BuyerName = "Jim Bob",
+                BuyerPhone = "07195723563",
+                BuyerEmail = "jimbob@email.com"
+            },
+            new ProductSale
+            {
+                Id = 5,
+                Make = "BMW",
+                Model = "1 Series",
+                Reg = "FH13 ALE",
+                Date = new DateOnly(2022, 11, 23),
+                Price = 7500m,
+                BuyerName = "Mary Jones",
+                BuyerPhone = "07497651437",
+                BuyerEmail = "maryjones@email.com"
+            },
+            new ProductSale
+            {
+                Id = 6,
+                Make = "Fiat",
+                Model = "500",
+                Reg = "HG14 LMS",
+                Date = new DateOnly(2019, 03, 28),
+                Price = 4550m,
+                BuyerName = "Sally Adams",
+                BuyerPhone = "07886436696",
+                BuyerEmail = "sallyadams@email.com"
+            }
+        };
+
+        public static List<ProductSale> GetProductSales()
+        {
+            return sales;
+        }
+    }
+
+        public static class CarList // Contains each vehicle object 
+    {
+        private static List<Product> vehicles = new List<Product>()
+        {
+            new Product 
+            {
                 Id = 1,
                 Make = "Volkswagen",
                 Model = "Golf",
@@ -62,7 +161,7 @@ namespace CarShop.Shared
                 Seats = "5",
                 FuelType = "Petrol",
                 Engine = "2.0L",
-                Title = "Volkswagen Golf",
+                Title = "Volkswagen Golf GTI",
                 Cylinders = "4",
                 Power = "208bhp",
                 FuelCapacity = "14.5 Gallons",
@@ -83,7 +182,8 @@ namespace CarShop.Shared
                 Image = "/Images/vw_golf_gti09.jpg",
                 Price = 8000m
             },
-            new Product {
+            new Product
+            { 
                 Id = 2,
                 Make = "Mazda",
                 Model = "MX-5",
@@ -93,7 +193,7 @@ namespace CarShop.Shared
                 Seats = "2",
                 FuelType = "Petrol",
                 Engine = "2.0L",
-                Title = "Mazda MX-5",
+                Title = "Mazda MX-5 RF",
                 Cylinders = "4",
                 Power = "158bhp",
                 FuelCapacity = "11.9 Gallons",
@@ -114,7 +214,8 @@ namespace CarShop.Shared
                 Image = "/Images/mazda-mx5-rf-front.jpg",
                 Price = 12000m
             },
-            new Product {
+            new Product 
+            {
                 Id = 3,
                 Make = "MINI",
                 Model = "Cooper S",
@@ -145,7 +246,8 @@ namespace CarShop.Shared
                 Image = "/Images/mini_cooper_s.jpg",
                 Price = 6000m
             },
-            new Product {
+            new Product
+            {
                 Id = 4,
                 Make = "Vauxhall",
                 Model = "Corsa",
@@ -175,21 +277,52 @@ namespace CarShop.Shared
                 Description = "Vauxhall Corsa 1.4L 2015",
                 Image = "/Images/vauxhall_corsa.jpg",
                 Price = 5500m
+            },
+            new Product
+            {
+                Id = 5,
+                Make = "Volvo",
+                Model = "XC60",
+                Year = "2018",
+                Mileage = "34500",
+                Transmission = "Automatic",
+                Seats = "5",
+                FuelType = "Diesel",
+                Engine = "1.9",
+                Title = "Volvo XC60 D4",
+                Cylinders = "4",
+                Power = "187bhp",
+                FuelCapacity = "13.2 Gallons",
+                TopSpeed = "127mph",
+                Acceleration = "8.4s",
+                DriveType = "Front Wheel Drive",
+                GearBox = "8 Speed Automatic",
+                Length = "4688mm",
+                Width = "1902mm",
+                Height = "1658mm",
+                WeightUnladed = "2020kg",
+                WeightGross = "2450kg",
+                FuelEconCity = "49mpg",
+                FuelEconHighway = "61mpg",
+                FuelEconComb = "55mpg",
+                CarbonEmissions = "133g/km",
+                Description = "Volvo XC60 D4 1.9L 2018",
+                Image = "/Images/volvo-xc60-hub.jpg",
+                Price = 22000m
             }
         };
 
-        public static List<Product> GetProducts()
+        public static List<Product> GetProducts()   // Returns vehicle object as 'vehicles'
         {
             return vehicles;
         }
 
-        public static Product GetProduct(int id)
+        public static Product GetProduct(int id)    // Gets the vehicle id
         {
 #pragma warning disable CS8603 // Possible null reference return.
             return vehicles.SingleOrDefault(p => p.Id == id);
 #pragma warning restore CS8603 // Possible null reference return.
         }
-
     }
 }
 

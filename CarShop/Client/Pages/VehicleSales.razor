@@ -1,0 +1,52 @@
+﻿@page "/sales"
+@inject NavigationManager NavigationManager
+
+<AuthorizeView>
+    <Authorized>
+        @{
+            var altColour = false;
+            <tr>
+                <th>Sale ID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Registration</th>
+                <th>Buyer Name</th>
+                <th>Buyer Email</th>
+                <th>Buyer Phone</th>                
+                <th>Date of Sale</th>
+                <th>Sold for</th>
+            </tr>
+            @foreach (var sale in sales)
+            {
+                <tr style="background-color:@(altColour ? "aliceblue" : "white");">
+                    <td>@sale.Id</td>
+                    <td>@sale.Make</td>
+                    <td>@sale.Model</td>
+                    <td>@sale.Reg</td>
+                    <td>@sale.BuyerName</td>
+                    <td>@sale.BuyerEmail</td>
+                    <td>@sale.BuyerPhone</td>
+                    <td>@sale.Date</td>
+                    <td>£@sale.Price</td>
+                </tr>
+                altColour = !altColour;
+            }
+        }
+    </Authorized>
+    <NotAuthorized>
+        Sorry, you do not have permission to view this page.
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code
+{
+    List<CarShop.Shared.ProductSale> sales;  // Gets vehicle list
+
+    protected override void OnInitialized()
+    {
+        this.sales = CarShop.Shared.CarSales.GetProductSales();
+    }
+
+}

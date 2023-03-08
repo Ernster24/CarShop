@@ -1,5 +1,6 @@
 ﻿@page "/finance/{Id:int}"
 @using Microsoft.Extensions.Logging
+@using System.Net.Http.Headers;
 @inject ILogger<Finance> Logger
 @inject NavigationManager NavigationManager
 
@@ -26,14 +27,33 @@
             <br />
             <InputText id="phone" @bind-Value="financeForm.Phone" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Phone Number..." />
             <br />
+            <InputFile OnChange ="@OnInputFileChange" multiple />
+            @if (fileNames.Count > 0)
+            {
+                <ul>
+                    @foreach (var fileName in fileNames)
+                    {
+                        <li>
+                            File: @fileName
+                        </li>
+                    }
+                </ul>
+            }
+            <br />
             <button type="submit">Apply for Finance</button>
         </EditForm>
     </article>
 </div>
 
+
+
+
 @code {
-    [Parameter]
-    public int Id { get; set; }
+        [Parameter]
+        public int Id { get; set; }
+    private int maxFileNo = int.MaxValue;
+    private long maxFileSize = long.MaxValue;
+    private List<string> fileNames = new();
 
     CarShop.Shared.Product vehicle = null;
 
@@ -49,8 +69,28 @@
 
     private CarShop.Shared.Forms.FinanceForm financeForm = new();
 
-    private void HandleSubmit()
+    private void HandleSubmit() // Handles information entered into the form when the submit button is clicked
     {
         Logger.LogInformation("HandleSubmit Called");
+
     }
+
+    private async Task OnInputFileChange(InputFileChangeEventArgs e)    // Handles file uploads
+    {
+        using var content = new MultipartFormDataContent();
+
+        foreach (var file in e.GetMultipleFiles(maxFileNo))
+        {
+            var fileContent = new StreamContent(file.OpenReadStream(maxFileSize));
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+
+            fileNames.Add(file.Name);
+
+            content.Add(
+                content: fileContent,
+                name: "\"files\"",
+                fileName: file.Name);
+        }
+    }
+
 }

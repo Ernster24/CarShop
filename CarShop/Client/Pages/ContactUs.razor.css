@@ -1,19 +1,33 @@
 ﻿.main {
-    margin-left: 360px;
-    margin-right: 360px;
+    margin-left: 160px;
+    margin-right: 160px;
 }
 
 .location {
+    width: 45%;
     text-align: center;
-    position: absolute;
+    float: left;
+}
+
+.map-details {
+    display: flex;
+}
+
+.google-map {
+    float: left;
+}
+
+.address {
+    float: right;
+    text-align: center;
+    margin-left: 20px;
 }
 
 .contact {
+    width: 30%;
+    margin-right: 120px;
     text-align: center;
-    text-align: right;
-}
-.contact-details {
-    text-align: inherit;
+    float: right;
 }
 
 h2 {

@@ -4,28 +4,35 @@
 <div class="main">
     <div class="location">
         <h2>Where are we Located?</h2>
-        <hr style="height: 3px; width: 100%;" />
-        <div id="google-map" style="width:400px; height:400px;"></div>
+        <hr style="height: 3px; margin-left: 40px; margin-right: 40px;"/>
+        <div class="map-details">
+            <div id="google-map" style="width:400px; height:400px;"></div>
+            <div class="address">
+                <p><b>Address: </b></p>
+                <p>246 Gibbett Hill Road</p>
+                <p>Coventry</p>
+                <p>Warwickshire</p>
+                <p>CV4 7ES</p>
+            </div>
+        </div>
+        
     </div>
 
     <div class="contact">
-        
-        <div class="contact-details">
-            <h2>How can you Contact us?</h2>
-            <hr style="height: 3px; margin-left: 600px;" />
-            <p><b>Phone Number: </b>01933 123456</p>
-            <p><b>Address: </b></p>
-        </div>
-        
+        <h2>How can you Contact us?</h2>
+        <hr style="height: 3px;" />
+        <p style="float: left;"><b>Phone Number: </b></p>
+        <p style="float: right;">01933 123456</p>
+        <br />
+        <br />
+        <p style="float: left;"><b>Email Address: </b></p>
+        <p style="float: right;">info@globalfinance.co.uk</p>
     </div>
 </div>
 
 
-
-
-
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync(bool firstRender) 
     {
         if (firstRender)
         {

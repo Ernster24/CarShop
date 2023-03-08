@@ -33,10 +33,12 @@
 		- Admin account has MFA (via email) []
 		- Staff can view:
 			- Car inventory []
-			- Number of cars sold []
+			- Number of cars sold [x]
 			- Customer finance applications []
 			- Customer documents that have been uploaded []
 
 Other stuff:
-	- More car specifications []
-	- Contact us details (address, phone number) []
+	- More car specifications [x]
+	- Contact us details (address, phone number) [x]
+	- Code is commented []
+	- Car search tool []
