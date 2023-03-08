@@ -1,8 +1,10 @@
 ﻿@page "/finance/{Id:int}"
 @using Microsoft.Extensions.Logging
 @using System.Net.Http.Headers;
+@using CarShop.Shared;
 @inject ILogger<Finance> Logger
 @inject NavigationManager NavigationManager
+@inject HttpClient Http
 
 
 <div class="finance-apply">
@@ -49,11 +51,12 @@
 
 
 @code {
-        [Parameter]
-        public int Id { get; set; }
+    [Parameter]
+    public int Id { get; set; }
     private int maxFileNo = int.MaxValue;
     private long maxFileSize = long.MaxValue;
     private List<string> fileNames = new();
+    private List<UploadResult> uploadResults = new();
 
     CarShop.Shared.Product vehicle = null;
 
@@ -91,6 +94,23 @@
                 name: "\"files\"",
                 fileName: file.Name);
         }
+
+        var response = await Http.PostAsync("/api/File", content);
+        var newUploadResults = await response.Content.ReadFromJsonAsync<List<UploadResult>>();
+
+        if(newUploadResults is not null)
+        {
+            uploadResults = uploadResults.Concat(newUploadResults).ToList();
+        }
+    }
+
+    private string? GetStoredFileName(string fileName)
+    {
+        var uploadResult = uploadResults.SingleOrDefault(f => f.FileName == fileName);
+        if (uploadResult is not null)
+            return uploadResult.StoredFileName;
+
+        return "File Not Found.";
     }
 
 }
