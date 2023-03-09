@@ -18,10 +18,10 @@
 		- Purchase page styled [x]
 
 	Car finance:
-		- Customer can fill out a finance form []
-		- Customer can upload documents []
+		- Customer can fill out a finance form [x]
+		- Customer can upload documents [x]
 		- Finance form is validated []
-		- Finance form styled []
+		- Finance form styled [x]
 
 	Account:
 		- Customer can create an account []

@@ -6,16 +6,16 @@
         <img class="media-img" src="@vehicle.Image" alt="@vehicle.Title" />
         <br />
         <div class="buttons">
-                <p>Click here to purchase this vehicle:</p>
-                <a class="btn" href="/buy/@vehicle.Id">Purchase</a>
-                <p>Or...</p>
-                <br />
-                <p>Click here to apply to finance this vehicle:</p>
-                <a class="btn" href="/finance/@vehicle.Id">Finance</a>
-                <p>Or...</p>
-                <br />
-                <p>Click here to book a test drive:</p>
-                <a class="btn" href="">Book a Test Drive</a>
+            <p><b>Click here to purchase this vehicle:</b></p>
+            <a class="btn" href="/buy/@vehicle.Id"><b>Purchase</b></a>
+            <p><b>Or...</b></p>
+            <br />
+            <p><b>Click here to apply to finance this vehicle:</b></p>
+            <a class="btn" href="/financeform"><b>Finance</b></a>
+            <p><b>Or...</b></p>
+            <br />
+            <p><b>Click here to book a test drive:</b></p>
+            <a class="btn" href=""><b>Book a Test Drive</b></a>
         </div>
         <h2><b>Key Information</b></h2>
         <div class="car-details">
@@ -25,6 +25,7 @@
                 <li><b>Year:</b>                   @vehicle.Year</li>
                 <li><b>Mileage:</b>                @vehicle.Mileage</li>
                 <li><b>Seats:</b>                  @vehicle.Seats</li>
+                <li><b>Registration:</b>           @vehicle.Reg</li>
             </ul>
         </div>
         <hr />

@@ -22,6 +22,12 @@ hr {
     color: black;
 }
 
+h1 {
+    font-size: 35px;
+    color: #0f79af;
+    text-align: center;
+}
+
 h4 {
     color: #0f79af;
 }

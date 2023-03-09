@@ -1,12 +1,35 @@
-﻿.finance-apply {
+﻿h1 {
     text-align: center;
+    font-size: 25px;
+    color: #0f79af;
+}
+
+hr {
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+.finance-apply {
+    width: min-content;
     margin: auto;
+    display: grid;
+    grid-template-columns: 320px 320px 320px 320px;
+    padding: 16px;
+    background-color: gainsboro;
+}
+
+.file-button {
+    margin-left: 360px;
+    margin-right: 360px;
+    display: flex;
+    width: min-content;
+    float: right;
 }
 
 button[type=submit] {
     width: 300px;
     padding: 6px 6px;
-    margin: 8px;
+    margin-top: 8px;
     border-radius: 5px;
     border-color: #0f79af;
     background-color: #0f79af;

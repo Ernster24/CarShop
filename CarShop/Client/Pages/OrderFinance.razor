@@ -1,51 +1,87 @@
-﻿@page "/finance/{Id:int}"
+﻿@page "/financeform"
 @using Microsoft.Extensions.Logging
 @using System.Net.Http.Headers;
 @using CarShop.Shared;
 @inject ILogger<Finance> Logger
+@inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 @inject HttpClient Http
 
 
-<div class="finance-apply">
-    <article>
-        <h1>Apply for Finance</h1>
-        <EditForm Model="@financeForm" OnSubmit="@HandleSubmit">
-            <InputText id="first-name" @bind-Value="financeForm.FirstName" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your First Name..." />
-            <br />
-            <InputText id="last-name" @bind-Value="financeForm.LastName" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Last Name..." />
-            <br />
-            <InputText id="email" @bind-Value="financeForm.Email" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Email Address..." />
-            <br />
-            <InputText id="house-no" @bind-Value="financeForm.HouseNo" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your House Number..." />
-            <br />
-            <InputText id="street" @bind-Value="financeForm.Street" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Street Name..." />
-            <br />
-            <InputText id="city" @bind-Value="financeForm.City" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your City..." />
-            <br />
-            <InputText id="region" @bind-Value="financeForm.Region" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Region..." />
-            <br />
-            <InputText id="country" @bind-Value="financeForm.Country" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Country..." />
-            <br />
-            <InputText id="phone" @bind-Value="financeForm.Phone" style="width: 300px; padding: 6px 6px; margin: 8px; border-radius: 5px; border-color: grey" placeholder="Enter your Phone Number..." />
-            <br />
-            <InputFile OnChange ="@OnInputFileChange" multiple />
-            @if (fileNames.Count > 0)
-            {
-                <ul>
-                    @foreach (var fileName in fileNames)
-                    {
-                        <li>
-                            File: @fileName
-                        </li>
-                    }
-                </ul>
-            }
-            <br />
-            <button type="submit">Apply for Finance</button>
-        </EditForm>
-    </article>
-</div>
+
+<h1>Apply for Finance</h1>
+<hr style="height: 3px;" />
+<EditForm Model="@financeForm" OnValidSubmit="@ValidSubmit" OnInvalidSubmit="@InvalidSubmit">
+        <div class="finance-apply">
+            <div class="personal-details">
+                <InputText id="first-name" @bind-Value="financeForm.FirstName" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your First Name..." />
+                <br />
+                <InputText id="last-name" @bind-Value="financeForm.LastName" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Last Name..." />
+                <br />
+                <InputText id="email" @bind-Value="financeForm.Email" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Email Address..." />
+                <br />
+                <InputText id="phone" @bind-Value="financeForm.Phone" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Phone Number..." />
+                <br />
+            </div>
+            <div class="address-details">
+                <InputText id="house-no" @bind-Value="financeForm.HouseNo" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your House Number..." />
+                <br />
+                <InputText id="street" @bind-Value="financeForm.Street" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Street Name..." />
+                <br />
+                <InputText id="city" @bind-Value="financeForm.City" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your City..." />
+                <br />
+                <InputText id="region" @bind-Value="financeForm.Region" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Region..." />
+                <br />
+                <InputText id="country" @bind-Value="financeForm.Country" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Country..." />
+                <br />
+            </div>
+            <div class="employement-details">
+                <InputText id="occupation" @bind-Value="financeForm.Occupation" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Occupation..." />
+                <br />
+                <InputText id="job-name" @bind-Value="financeForm.JobName" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter the Name of your Company..." />
+                <br />
+                <InputText id="job-address" @bind-Value="financeForm.JobAddress" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter the Address of your Company..." />
+                <br />
+                <InputText id="job-phone" @bind-Value="financeForm.JobPhone" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter the Phone Number for your Company..." />
+                <br />
+                <InputText id="job-salary" @bind-Value="financeForm.JobSalary" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Enter your Salary..." />
+                <br />
+            </div>
+            <div class="car-details">
+                <InputText id="make" @bind-Value="financeForm.Make" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Car Make..." />
+                <br />
+                <InputText id="model" @bind-Value="financeForm.Model" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Car Model..." />
+                <br />
+                <InputText id="reg" @bind-Value="financeForm.Reg" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Car Registration..." />
+                <br />
+                <InputText id="mileage" @bind-Value="financeForm.Mileage" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Car Mileage..." />
+                <br />
+                <InputText id="deposit" @bind-Value="financeForm.Deposit" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Deposit Amount..." />
+                <br />
+                <InputText id="monthly-finance" @bind-Value="financeForm.MonthlyFinance" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Monthly Finance Payment..." />
+                <br />
+                <InputText id="total-price" @bind-Value="financeForm.TotalPrice" style="width: 300px; padding: 6px 6px; margin: 4px; border-radius: 5px; border-color: grey" placeholder="Total Price of Finance Payments..." />
+                <br />
+            </div>
+            <div class="file-button">
+                <InputFile OnChange="@OnInputFileChange" multiple />    
+                @if (fileNames.Count > 0)
+                {
+                    <ul>
+                        @foreach (var fileName in fileNames)
+                        {
+                            <li>
+                                File: @fileName
+                            </li>
+                        }
+                    </ul>
+                }
+                <button type="submit">Apply for Finance</button>
+            </div>
+            
+    </div>
+    </EditForm>
+
 
 
 
@@ -57,10 +93,13 @@
     private long maxFileSize = long.MaxValue;
     private List<string> fileNames = new();
     private List<UploadResult> uploadResults = new();
+    private CarShop.Shared.Forms.FinanceForm financeForm = new();
+
+
 
     CarShop.Shared.Product vehicle = null;
 
-    protected override void OnParametersSet()
+    protected override void OnParametersSet()   // Gets vehicle ID and uses to automatically fill in the car detail entry forms
     {
         this.vehicle = CarShop.Shared.CarList.GetProduct(this.Id);
     }
@@ -70,13 +109,17 @@
         NavigationManager.NavigateTo("vehicles");
     }
 
-    private CarShop.Shared.Forms.FinanceForm financeForm = new();
-
-    private void HandleSubmit() // Handles information entered into the form when the submit button is clicked
+    private void ValidSubmit() // Handles information entered into the form when the submit button is clicked
     {
-        Logger.LogInformation("HandleSubmit Called");
-
+        Logger.LogInformation("ValidSubmit Called");
     }
+
+    private void InvalidSubmit()    
+    {
+        Logger.LogInformation("InvalidSubmit Called");
+    }
+
+
 
     private async Task OnInputFileChange(InputFileChangeEventArgs e)    // Handles file uploads
     {

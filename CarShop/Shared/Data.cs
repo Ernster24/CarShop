@@ -11,6 +11,7 @@ namespace CarShop.Shared
         public string? Model { get; set; }
         public string? Year { get; set; }
         public string? Mileage { get; set; }
+        public string? Reg { get; set; }
         public string? Transmission { get; set; }
         public string? Seats { get; set; }
         public string? FuelType { get; set; }
@@ -157,6 +158,7 @@ namespace CarShop.Shared
                 Model = "Golf",
                 Year = "2009",
                 Mileage = "85241",
+                Reg = "OY59 HJJ",
                 Transmission = "Manual",
                 Seats = "5",
                 FuelType = "Petrol",
@@ -189,6 +191,7 @@ namespace CarShop.Shared
                 Model = "MX-5",
                 Year = "2020",
                 Mileage = "55342",
+                Reg = "VX20 JXU",
                 Transmission = "Manual",
                 Seats = "2",
                 FuelType = "Petrol",
@@ -221,6 +224,7 @@ namespace CarShop.Shared
                 Model = "Cooper S",
                 Year = "2008",
                 Mileage = "69432",
+                Reg = "YG08 NOF",
                 Transmission = "Manual",
                 Seats = "4",
                 FuelType = "Petrol",
@@ -253,6 +257,7 @@ namespace CarShop.Shared
                 Model = "Corsa",
                 Year = "2015",
                 Mileage = "62975",
+                Reg = "VX65 PYJ",
                 Transmission = "Manual",
                 Seats = "5",
                 FuelType = "Petrol",
@@ -285,6 +290,7 @@ namespace CarShop.Shared
                 Model = "XC60",
                 Year = "2018",
                 Mileage = "34500",
+                Reg = "KJ17 EHR",
                 Transmission = "Automatic",
                 Seats = "5",
                 FuelType = "Diesel",
