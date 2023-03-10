@@ -55,4 +55,5 @@ namespace CarShop.Client
             return Convert.FromBase64String(base64);
         }
     }
-}
+}   // (God, 2020)
+    

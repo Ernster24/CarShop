@@ -40,7 +40,7 @@ namespace CarShop.Server.Controllers
                 uploadResults.Add(uploadResult);
             }
 
-            return Ok(uploadResults);
+            return Ok(uploadResults);   // (God, 2020)
         }
     }
 }

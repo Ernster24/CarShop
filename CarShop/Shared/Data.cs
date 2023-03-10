@@ -294,7 +294,7 @@ namespace CarShop.Shared
                 Transmission = "Automatic",
                 Seats = "5",
                 FuelType = "Diesel",
-                Engine = "1.9",
+                Engine = "1.9L",
                 Title = "Volvo XC60 D4",
                 Cylinders = "4",
                 Power = "187bhp",
@@ -315,6 +315,39 @@ namespace CarShop.Shared
                 Description = "Volvo XC60 D4 1.9L 2018",
                 Image = "/Images/volvo-xc60-hub.jpg",
                 Price = 22000m
+            },
+            new Product
+            {
+                Id = 6,
+                Make = "Ford",
+                Model = "Raptor",
+                Year = "2021",
+                Mileage = "3000",
+                Reg = "EA71 DKL",
+                Transmission = "Automatic",
+                Seats = "5",
+                FuelType = "Petrol",
+                Engine = "3.5L",
+                Title = "Ford Raptor",
+                Cylinders = "6",
+                Power = "450bhp",
+                FuelCapacity = "36.0 Gallons",
+                TopSpeed = "111mph",
+                Acceleration = "5.6s",
+                DriveType = "Four Wheel Drive",
+                GearBox = "10 Speed Automatic",
+                Length = "5381mm",
+                Width = "1922mm",
+                Height = "1955mm",
+                WeightUnladed = "2475kg",
+                WeightGross = "3130kg",
+                FuelEconCity = "15mpg",
+                FuelEconHighway = "18mpg",
+                FuelEconComb = "16mpg",
+                CarbonEmissions = "212g/km",
+                Description = "Ford Ranger Raptor",
+                Image = "/Images/026-ranger-raptor-review.jpg",
+                Price = 60000m
             }
         };
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarShop.Shared
 {
-    public class UserLoginDto
+    public class UserLoginDto   // User login credentials
     {
         public string UserName { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;

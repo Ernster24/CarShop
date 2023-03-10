@@ -1,9 +1,9 @@
 ﻿Main modules:
 	- Customer can browse cars [x]
-	- Customer can buy car []
-	- Customer can finance car []
+	- Customer can buy car [x]
+	- Customer can finance car [ish]
 	- Customer has an account they can log into []
-	- Staff can log into admin account []
+	- Staff can log into admin account [x]
 
 	Showroom:
 		- Each car is listed [x]
@@ -29,7 +29,7 @@
 		- Login and signup pages styled []
 		
 	Admin:
-		- Staff can log into admin account []
+		- Staff can log into admin account [x]
 		- Admin account has MFA (via email) []
 		- Staff can view:
 			- Car inventory []
@@ -40,5 +40,5 @@
 Other stuff:
 	- More car specifications [x]
 	- Contact us details (address, phone number) [x]
-	- Code is commented []
+	- Code is commented [x]
 	- Car search tool []
