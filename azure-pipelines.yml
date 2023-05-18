@@ -39,6 +39,6 @@ steps:
     azureSubscription: 'Azure subscription 1 (f3eaf914-48e2-4b65-bbaa-3af0e9623dd6)'
     appType: 'webApp'
     WebAppName: 'Azure App Service Deploy'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
 
 - task: PublishBuildArtifacts@1
