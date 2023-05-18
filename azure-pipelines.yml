@@ -32,16 +32,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1 (f3eaf914-48e2-4b65-bbaa-3af0e9623dd6)'
-    appType: 'webApp'
-    WebAppName: 'Azure App Service Deploy'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
